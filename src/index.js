@@ -74,7 +74,7 @@ function ef_aivd(){
       }
     });
     req.end();
-  }, 10000);
+  }, self.config.QUERY_DELAY_SECONDS);
 }
 
 module.exports.ef_aivd = new ef_aivd();
