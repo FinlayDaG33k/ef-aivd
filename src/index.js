@@ -27,6 +27,7 @@ function ef_aivd(){
   var self = this;
   self.config = require('./config');
 
+
   /*
   *------------------------------------------------------------------------
   * Load some functions from the files
