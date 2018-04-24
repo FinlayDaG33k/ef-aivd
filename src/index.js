@@ -4,6 +4,7 @@
 *--------------------------------------------------
 *
 */
+const fs = require('fs');
 
 /*
 *--------------------------------------------------
@@ -26,6 +27,29 @@ function ef_aivd(){
   * 
   */
   self.formatTime = require('./functions/formatTime').formatTime;
+  self.generateRubbish = require('./functions/generateRubbish').generateRubbish;
+
+  
+  /*
+  *------------------------------------------------------------------------
+  * Load our wordlist
+  *------------------------------------------------------------------------
+  *
+  * Load all lines of our wordlist and put them in an object.
+  * Not the most efficient way, but it'll do for now
+  * 
+  */
+  console.log(`[${self.formatTime()}] Loading wordlist, this may take a while to complete...`);
+  var Wordlist = fs.readFileSync('wordlists/wordlist.txt').toString().split('\r\n');
+  console.log(`[${self.formatTime()}] Loading wordlist complete!`);
+
+  /*
+  *------------------------------------------------------------------------
+  * Generate the rubbish
+  *------------------------------------------------------------------------
+  * 
+  */
+  console.log(self.generateRubbish(Wordlist, 1,5));
 }
 
 module.exports.ef_aivd = new ef_aivd();
