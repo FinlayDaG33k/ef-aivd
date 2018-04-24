@@ -13,6 +13,9 @@
 */
 function ef_aivd(){
 
+  // define self with 'this'
+  var self = this;
+
 }
 
 module.exports.ef_aivd = new ef_aivd();
