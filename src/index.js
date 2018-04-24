@@ -81,7 +81,7 @@ function ef_aivd(){
       }
     });
     req.end();
-  }, self.config.QUERY_DELAY_SECONDS);
+  }, self.config.QUERY_DELAY_SECONDS * 1000);
 }
 
 module.exports.ef_aivd = new ef_aivd();
