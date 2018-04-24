@@ -46,18 +46,28 @@ function ef_aivd(){
 
   /*
   *------------------------------------------------------------------------
-  * Create the bogus search
+  * Create the bogus searches
   *------------------------------------------------------------------------
   * 
   * First, we generate some rubbish, encode it and send it to the
-  * search engine
+  * search engine.
+  * Then, we repeat this every minute or so
   * 
   */
-  var rubbish = self.generateRubbish(Wordlist, 0,5);
-  var encoded_rubbish = encodeURIComponent(rubbish);
-  var options = {method: 'HEAD', host: 'google.com', port: 80, path: '/search?q='};
-  var req = http.request(options); // we do not care about what is being send back
-  req.end();
+  setInterval(function() {
+    var rubbish = self.generateRubbish(Wordlist, 0,5);
+    console.log(`[${self.formatTime()}] Sending rubbish query: ${rubbish}`);
+    var encoded_rubbish = encodeURIComponent(rubbish);
+    var options = {method: 'HEAD', host: 'google.com', port: 80, path: '/search?q='};
+    var req = http.request(options,function(resp){
+      console.log(resp.statusCode);
+      // Check whether the request was a success
+      if(resp.statusCode == "200"){
+        console.log(`[${self.formatTime()}] Successfully send rubbish query!`);
+      }
+    });
+    req.end();
+  }, 10000);
 }
 
 module.exports.ef_aivd = new ef_aivd();
