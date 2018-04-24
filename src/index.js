@@ -92,7 +92,7 @@ function ef_aivd(){
   * 
   */
   setInterval(function() {
-    var rubbish = self.generateRubbish(Wordlist, 0,5);
+    var rubbish = self.generateRubbish(wordlist, 0,5);
     console.log(`[${self.formatTime()}] Sending rubbish query: ${rubbish}`);
     var encoded_rubbish = encodeURIComponent(rubbish);
     var options = {method: 'HEAD', host: 'google.com', port: 80, path: '/search?q='};
