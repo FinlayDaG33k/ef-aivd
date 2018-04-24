@@ -5,6 +5,7 @@
 *
 */
 const fs = require('fs');
+const http = require('http');
 
 /*
 *--------------------------------------------------
@@ -46,10 +47,16 @@ function ef_aivd(){
   /*
   *------------------------------------------------------------------------
   * Generate the rubbish
+  * Create the bogus search
   *------------------------------------------------------------------------
+  * 
+  * First, we generate some rubbish, encode it and send it to the
+  * search engine
   * 
   */
   console.log(self.generateRubbish(Wordlist, 1,5));
+  var rubbish = self.generateRubbish(Wordlist, 0,5);
+  var encoded_rubbish = encodeURIComponent(rubbish);
 }
 
 module.exports.ef_aivd = new ef_aivd();
