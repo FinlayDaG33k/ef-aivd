@@ -46,7 +46,6 @@ function ef_aivd(){
 
   /*
   *------------------------------------------------------------------------
-  * Generate the rubbish
   * Create the bogus search
   *------------------------------------------------------------------------
   * 
@@ -54,9 +53,11 @@ function ef_aivd(){
   * search engine
   * 
   */
-  console.log(self.generateRubbish(Wordlist, 1,5));
   var rubbish = self.generateRubbish(Wordlist, 0,5);
   var encoded_rubbish = encodeURIComponent(rubbish);
+  var options = {method: 'HEAD', host: 'google.com', port: 80, path: '/search?q='};
+  var req = http.request(options); // we do not care about what is being send back
+  req.end();
 }
 
 module.exports.ef_aivd = new ef_aivd();
