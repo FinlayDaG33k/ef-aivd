@@ -25,7 +25,9 @@ module.exports.ef_aivd = new ef_aivd();
 * Any uncaught exception will be handled here
 *
 * You can change whether to exit the process
-* in the confis.js file
+* in the confis.js file.
+* If set to true, it will exit, otherwise,
+* It will restart the process
 */
 process.on('uncaughtException', function(err){
   var self = this;
