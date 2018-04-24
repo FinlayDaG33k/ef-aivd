@@ -56,6 +56,18 @@ function ef_aivd(){
 
 
   /*
+  *--------------------------------------------------
+  * Create our table(s)
+  *--------------------------------------------------
+  *
+  * Check whether the table exists, and if not,
+  * create them.
+  * 
+  */
+  db.run("CREATE TABLE IF NOT EXISTS `Wordlist`(ID INTEGER PRIMARY KEY AUTOINCREMENT, Word TEXT NOT NULL UNIQUE);");
+
+
+  /*
   *------------------------------------------------------------------------
   * Load our wordlist
   *------------------------------------------------------------------------
