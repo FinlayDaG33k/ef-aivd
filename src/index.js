@@ -81,7 +81,29 @@ function ef_aivd(){
   console.log(`[${self.formatTime()}] Loading wordlist complete!`);
   console.log(`[${self.formatTime()}] Wordlist has ${wordlist.length} entries`);
 
-  
+
+  /*
+  *------------------------------------------------------------------------
+  * Add our wordlist to the database
+  *------------------------------------------------------------------------
+  *
+  * Insert all entries of our wordlist into the database
+  * 
+  */
+  db.serialize(() => {
+    wordlist.forEach(function(word){
+      db.run("INSERT INTO `Wordlist` (Word) VALUES(?)",[word],(err) => {
+        if(err){
+          if(self.config.DEBUG){
+            return console.log(err.message);
+          }else{
+            return;
+          }
+        }
+      });
+    });
+  });
+
   /*
   *------------------------------------------------------------------------
   * Create the bogus searches
