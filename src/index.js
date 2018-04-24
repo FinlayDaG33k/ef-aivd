@@ -62,8 +62,15 @@ function ef_aivd(){
     var req = http.request(options,function(resp){
       console.log(resp.statusCode);
       // Check whether the request was a success
-      if(resp.statusCode == "200"){
-        console.log(`[${self.formatTime()}] Successfully send rubbish query!`);
+      switch(resp.statusCode){
+        case 200: {
+          console.log(`[${self.formatTime()}] Successfully send rubbish query!`);
+          break;
+        }
+        case 301: {
+          console.log(`[${self.formatTime()}] There was a small (ignorable) issue while sending the rubbish query`);
+          break;
+        }
       }
     });
     req.end();
