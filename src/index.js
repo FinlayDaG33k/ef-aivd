@@ -53,7 +53,7 @@ function ef_aivd(){
     console.log(`[${self.formatTime()}] Connected to the SQLite database`);
   });
 
-  
+
   /*
   *------------------------------------------------------------------------
   * Load our wordlist
@@ -67,6 +67,7 @@ function ef_aivd(){
   var Wordlist = fs.readFileSync('wordlists/wordlist.txt').toString().split('\r\n');
   console.log(`[${self.formatTime()}] Loading wordlist complete!`);
 
+  
   /*
   *------------------------------------------------------------------------
   * Create the bogus searches
