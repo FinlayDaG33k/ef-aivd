@@ -6,6 +6,8 @@
 */
 const fs = require('fs');
 const http = require('http');
+const sqlite3 = require('sqlite3');
+
 
 /*
 *--------------------------------------------------
