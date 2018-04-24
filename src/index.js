@@ -79,6 +79,7 @@ function ef_aivd(){
   console.log(`[${self.formatTime()}] Loading wordlist, this may take a while to complete...`);
   var wordlist = fs.readFileSync('wordlists/wordlist.txt').toString().split('\r\n');
   console.log(`[${self.formatTime()}] Loading wordlist complete!`);
+  console.log(`[${self.formatTime()}] Wordlist has ${wordlist.length} entries`);
 
   
   /*
