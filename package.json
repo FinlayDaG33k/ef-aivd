@@ -1,0 +1,19 @@
+{
+  "name": "ef-aivd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FinlayDaG33k/ef-aivd.git"
+  },
+  "author": "Aroop Roelofs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FinlayDaG33k/ef-aivd/issues"
+  },
+  "homepage": "https://github.com/FinlayDaG33k/ef-aivd#readme"
+}
