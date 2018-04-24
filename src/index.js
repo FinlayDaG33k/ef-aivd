@@ -50,4 +50,8 @@ process.on('uncaughtException', function(err){
   // Log the error to the console
   console.error((new Date).toUTCString() + ' uncaughtException:', err.message);
   console.error(err.stack);
+
+  if(self.config.EXIT_ON_ERROR == "true"){
+    process.exit(1);
+  }
 });
