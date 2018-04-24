@@ -16,6 +16,16 @@ function ef_aivd(){
   // define self with 'this'
   var self = this;
 
+  /*
+  *------------------------------------------------------------------------
+  * Load some functions from the files
+  *------------------------------------------------------------------------
+  *
+  * Load functions here that shouldn't change too often (to keep this file
+  * nice and compact)
+  * 
+  */
+  self.formatTime = require('./functions/formatTime').formatTime;
 }
 
 module.exports.ef_aivd = new ef_aivd();
