@@ -77,7 +77,7 @@ function ef_aivd(){
   * 
   */
   console.log(`[${self.formatTime()}] Loading wordlist, this may take a while to complete...`);
-  var Wordlist = fs.readFileSync('wordlists/wordlist.txt').toString().split('\r\n');
+  var wordlist = fs.readFileSync('wordlists/wordlist.txt').toString().split('\r\n');
   console.log(`[${self.formatTime()}] Loading wordlist complete!`);
 
   
