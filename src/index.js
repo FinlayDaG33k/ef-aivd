@@ -40,6 +40,7 @@ function ef_aivd(){
   self.formatTime = require('./functions/formatTime').formatTime;
   self.generateRubbish = require('./functions/generateRubbish').generateRubbish;
 
+
   /*
   *--------------------------------------------------
   * Open a database connection
