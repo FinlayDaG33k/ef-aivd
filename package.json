@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FinlayDaG33k/ef-aivd#readme",
   "dependencies": {
+    "moment": "^2.22.1",
     "nodemon": "^1.17.3"
   }
 }
