@@ -40,6 +40,19 @@ function ef_aivd(){
   self.formatTime = require('./functions/formatTime').formatTime;
   self.generateRubbish = require('./functions/generateRubbish').generateRubbish;
 
+  /*
+  *--------------------------------------------------
+  * Open a database connection
+  *--------------------------------------------------
+  *
+  */
+  var db = new sqlite3.Database('database.sqlite', (err) => {
+    if (err){
+      return console.error(err.message);
+    }
+    console.log(`[${self.formatTime()}] Connected to the SQLite database`);
+  });
+
   
   /*
   *------------------------------------------------------------------------
