@@ -67,7 +67,6 @@ function ef_aivd(){
     var encoded_rubbish = encodeURIComponent(rubbish);
     var options = {method: 'HEAD', host: 'google.com', port: 80, path: '/search?q='};
     var req = http.request(options,function(resp){
-      console.log(resp.statusCode);
       // Check whether the request was a success
       switch(resp.statusCode){
         case 200: {
