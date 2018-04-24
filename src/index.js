@@ -42,6 +42,14 @@ function ef_aivd(){
   console.log(`[${self.formatTime()}] Loading wordlist, this may take a while to complete...`);
   var Wordlist = fs.readFileSync('wordlists/wordlist.txt').toString().split('\r\n');
   console.log(`[${self.formatTime()}] Loading wordlist complete!`);
+
+  /*
+  *------------------------------------------------------------------------
+  * Generate the rubbish
+  *------------------------------------------------------------------------
+  * 
+  */
+  console.log(self.generateRubbish(Wordlist, 1,5));
 }
 
 module.exports.ef_aivd = new ef_aivd();
