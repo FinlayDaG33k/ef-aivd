@@ -46,7 +46,7 @@ function ef_aivd(){
   *--------------------------------------------------
   *
   */
-  var db = new sqlite3.Database('database.sqlite', (err) => {
+  var db = new sqlite3.Database('./database.sqlite', (err) => {
     if (err){
       return console.error(err.message);
     }
