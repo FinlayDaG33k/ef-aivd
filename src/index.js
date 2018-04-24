@@ -120,15 +120,17 @@ function ef_aivd(){
     var encoded_rubbish = encodeURIComponent(rubbish);
     var options = {method: 'HEAD', host: 'google.com', port: 80, path: '/search?q='};
     var req = http.request(options,function(resp){
-      // Check whether the request was a success
-      switch(resp.statusCode){
-        case 200: {
-          console.log(`[${self.formatTime()}] Successfully send rubbish query!`);
-          break;
-        }
-        case 301: {
-          console.log(`[${self.formatTime()}] There was a small (ignorable) issue while sending the rubbish query`);
-          break;
+      if(self.config.DEBUG){
+        // Check whether the request was a success
+        switch(resp.statusCode){
+          case 200: {
+            console.log(`[${self.formatTime()}] Successfully send rubbish query!`);
+            break;
+          }
+          case 301: {
+            console.log(`[${self.formatTime()}] There was a small (ignorable) issue while sending the rubbish query`);
+            break;
+          }
         }
       }
     });
