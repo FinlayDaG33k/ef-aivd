@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/FinlayDaG33k/ef-aivd/issues"
   },
-  "homepage": "https://github.com/FinlayDaG33k/ef-aivd#readme"
+  "homepage": "https://github.com/FinlayDaG33k/ef-aivd#readme",
+  "dependencies": {
+    "nodemon": "^1.17.3"
+  }
 }
